@@ -14,4 +14,5 @@ cd到入口文件夹Rural-library/rural_library/rural_library，
 执行命令npm install
 ## 4.执行命令npm run serve
 访问窗口上显示的网址，即可在浏览器中看见网页
+## 5.用本地的vs code或者其他打开项目，即可编写和修改
 
