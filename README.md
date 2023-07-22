@@ -17,7 +17,7 @@ cd到入口文件夹Rural-library/rural_library/rural_library，
 访问窗口上显示的网址，即可在浏览器中看见网页
 ## 5.用本地的vs code或者其他打开项目，即可编写和修改
 # 前后端教程：
-html[https://www.bilibili.com/video/BV1jf4y1J7Ms/?spm_id_from=333.337.search-card.all.click]  
+html： [https://www.bilibili.com/video/BV1jf4y1J7Ms/?spm_id_from=333.337.search-card.all.click]  
 框架学习：[https://www.bilibili.com/video/BV1nV4y1s7ZN/?p=9&spm_id_from=333.999.top_right_bar_window_history.content.click]  
-ps:我们后端开发可能还是采用node.js，用的语言是javascipt
+ps: 我们后端开发可能还是采用node.js，用的语言是javascipt
 
