@@ -8,7 +8,8 @@ a website to manage Rural libraries in China
 # 如何运行项目：
 ## 1.把项目clone到本地
 ## 2.下载node.js 
-官网网址：[https://nodejs.org/zh-cn],附加项目可安装可不安装
+官网网址：[https://nodejs.org/zh-cn]  
+附加项目可安装可不安装
 ## 3.安装相关依赖
 cd到入口文件夹Rural-library/rural_library/rural_library，  
 执行命令npm install
