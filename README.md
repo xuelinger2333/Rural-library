@@ -1,2 +1,14 @@
 # Rural-library
 a website to manage Rural libraries in China
+# Github使用：
+新手建议下载github桌面，图形化界面很友好
+**没有把握**
+# 如何运行项目：
+## 1.把项目clone到本地
+## 2.下载node.js 
+官网网址：[https://nodejs.org/zh-cn]
+## 3.安装相关依赖
+cd到入口文件夹Rural-library/rural_library/rural_library，执行命令npm install
+## 4.执行命令npm run serve
+访问窗口上显示的网址，即可在浏览器中看见网页
+
