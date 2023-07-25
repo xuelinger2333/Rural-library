@@ -24,12 +24,14 @@ a website to manage Rural libraries in China
 ## 1.把项目clone到本地  
 ## 2.下载安装node.js   
 官网网址：[https://nodejs.org/zh-cn]   
-安装版本随意，但是安装后，要用命令npm -v 确认npm版本是否是9.5.1。  
+为保持版本一致，最好安装node18.16.0版本，  
+下载地址：[https://nodejs.org/dist/v18.16.0/]  
+可以用命令npm -v 确认npm版本是否是9.5.1。  
 ## 3.安装相关依赖
 cd命令：可以指定要进入的目录    
 e.g. 原来命令行目录是./home，执行cd Rural-library后，现在目录是./home/Rural-library    
 cd到clone项目的文件夹Rural-library/rural_library/rural_library，要保证这个文件夹里有package.json文件。    
-在命令行窗口执行命令npm install。
+在命令行窗口执行命令npm install  
 ## 4.执行命令npm run serve  
 在命令行窗口执行命令npm run serve。  
 注意保证目录仍是Rural-library/rural_library/rural_library    
