@@ -7,8 +7,10 @@
     <div class="image-layout">
       
       <div class="left-image">
-        <!-- ref = "mapContainer" -->
-        A
+        <button @click="returnCountry">返回全国</button>
+        <div class="mapp">
+          <aMap :reCountry="reCountry"></aMap>
+        </div>
       </div>
 
       <div class="right-images">
@@ -23,36 +25,45 @@
     </div>
 
     <div class="other"> others</div>
+    <ChinaMap></ChinaMap>
   </div>
 </template>
 
 <script>
-//import { init } from 'echarts'
+import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText, TextToCode } from 'element-china-area-data'
+import aMap from "@/components/amap.vue"
 
 export default {
   name: 'HomeView',
-  // 目前还未学会echarts及其引入方式，开发时若使用下面代码暂时（）需额外使用npm install echarts
-  // 为不影响原有引入方式暂以注解写这一段代码（也许这一段也有错呢
-  // mounted() {
-  //   const mapChart = init(this.$refs.mapContainer)
-  //   this.renderMapChart(mapChart)
-  // },
-  // methods: {
-  //   renderMapChart(chart) {
-  //     const option = {
-  //       series: [{
-  //         type: 'map',
-  //         map: 'china'
-  //         // 其他地图配置项和数据
-  //       }]
-  //     }
-  //     chart.setOption(option)
-  //   }
-  // }
+  components:
+  {
+    aMap
+  },
+  data(){
+    return{
+      provinceAndCityData,
+      reCountry:true,
+    }
+  },
+  methods: {
+  			//点击全国按钮
+		    returnCountry() {
+		      this.reCountry = true;
+		      setTimeout(() => {
+		        this.reCountry = false;
+		      }, 500);
+		    },
+  		}
 }
 </script>
 
 <style scoped>
+.mapp {
+  width: 48vw;
+  height: 69vh;
+  z-index: 2;
+}
+
 .head {
   position: relative;
   top: 70px;

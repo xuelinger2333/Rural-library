@@ -4,7 +4,12 @@ const Components = require('unplugin-vue-components/webpack')
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 module.exports = defineConfig({
   transpileDependencies: true,
+  publicPath: './',
   configureWebpack:{
+    externals: {
+      AMap: "AMap",
+      AMapUI: "AMapUI"
+    },
     plugins: [
       AutoImport({
         resolvers: [ElementPlusResolver()],
