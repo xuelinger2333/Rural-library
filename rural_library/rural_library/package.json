@@ -10,6 +10,7 @@
     "@amap/amap-jsapi-loader": "^1.0.1",
     "axios": "^1.4.0",
     "core-js": "^3.8.3",
+    "echarts": "^5.4.3",
     "element-china-area-data": "^6.0.2",
     "element-plus": "^2.3.8",
     "less": "^4.1.3",

@@ -7,9 +7,9 @@
     <div class="image-layout">
       
       <div class="left-image">
-        <button @click="returnCountry">返回全国</button>
+  
         <div class="mapp">
-          <aMap :reCountry="reCountry"></aMap>
+          <China></China>
         </div>
       </div>
 
@@ -25,19 +25,20 @@
     </div>
 
     <div class="other"> others</div>
-    <ChinaMap></ChinaMap>
   </div>
 </template>
 
 <script>
 import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText, TextToCode } from 'element-china-area-data'
 import aMap from "@/components/amap.vue"
+import China from "@/components/china.vue"
 
 export default {
   name: 'HomeView',
   components:
   {
-    aMap
+    aMap,
+    China
   },
   data(){
     return{
@@ -62,6 +63,7 @@ export default {
   width: 48vw;
   height: 69vh;
   z-index: 2;
+  background-color: aquamarine;
 }
 
 .head {
@@ -84,6 +86,7 @@ export default {
 }
 
 .right-images {
+  background-color: aqua;
   display: grid;
   grid-template-rows: 1fr 1fr; /* 右边图片上下各占一半 */
   grid-row: 1 / span 2; /* 右边图片区域跨越两行 */
