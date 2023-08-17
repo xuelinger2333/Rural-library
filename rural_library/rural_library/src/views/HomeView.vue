@@ -15,30 +15,33 @@
 
       <div class="right-images">
         <div class="right-image-top">
-          B
+          <ScorePie></ScorePie>
         </div>
 
         <div class="right-image-bottom">
-          C
+          <AmountRank></AmountRank>
         </div>
       </div>
     </div>
-
-    <div class="other"> others</div>
   </div>
 </template>
 
 <script>
 import { provinceAndCityData, regionData, provinceAndCityDataPlus, regionDataPlus, CodeToText, TextToCode } from 'element-china-area-data'
-import aMap from "@/components/amap.vue"
+//import aMap from "@/components/amap.vue"
 import China from "@/components/china.vue"
+import ScorePie from "@/components/ScorePie.vue"
+import AmountRank from "@/components/AmountRank.vue"
+
 
 export default {
   name: 'HomeView',
   components:
   {
-    aMap,
-    China
+    //aMap,
+    China,
+    ScorePie,
+    AmountRank
   },
   data(){
     return{
@@ -76,13 +79,14 @@ export default {
   position: relative;
   top: 100px;
   display: grid;
-  grid-template-columns: 2fr 1fr; /* 左2/3，右1/3 */
+  grid-template-columns: 1fr 1fr; /* 左1/2，右1/2 */
   gap: 10px; /* 图片之间的间距 */
+  height: 70vh;
 }
 
 .left-image {
   grid-column: 1; /* 左边图片占据第一列 */
-  grid-row: 1 / span 2; /* 左边图片跨越两行 */
+  grid-row: 1; /* 左边图片跨越两行 */
 }
 
 .right-images {

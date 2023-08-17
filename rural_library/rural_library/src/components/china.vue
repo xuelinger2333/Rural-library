@@ -4,11 +4,15 @@
 <script>
 
 import * as echarts from 'echarts';
+import bus from 'vue3-eventbus';
+import axios from 'axios'
+import { provinceAndCityData } from 'element-china-area-data';
 
 const chinaJson = require('../utils/china.json');
 export default {
-    data() {
+  data() {
     return {
+      myChart: null,
       dataList: [
         { name: "南海诸岛" },
         { ename: "beijing", name: "北京"},
@@ -48,18 +52,23 @@ export default {
       ],
     };
   },
+
+
   methods: {
     initEchart() {
 
-    let dataList = this.dataList;
-    for(let i = 0; i < dataList.length; i++){
-        dataList[i].value = Math.ceil(Math.random() * 1000 - 1);
-    }
-    echarts.registerMap('china', chinaJson)
-// 基于准备好的dom，初始化echarts实例
-    var myChart = echarts.init(document.getElementById('main'));
-    var option = {
-    tooltip: {
+      // let dataList = this.dataList;
+      // // 随机生成数据，此后该数据应当由后端返回
+
+      // for(let i = 0; i < dataList.length; i++){
+      //     dataList[i].value = Math.ceil(Math.random() * 1000 - 1);
+      // }
+
+      echarts.registerMap('china', chinaJson);
+      // 基于准备好的dom，初始化echarts实例
+      this.myChart = echarts.init(document.getElementById('main'));
+      var option = {
+        tooltip: {
           //数据格式化
           formatter: function(params, callback) {
             return (
@@ -112,14 +121,51 @@ export default {
             data: this.dataList,
           },
         ],
-    };
-    myChart.setOption(option);
-},
+      };
+      this.myChart.setOption(option);
+
+      //鼠标悬浮事件
+      this.myChart.on("mouseover",function(params){
+        //console.log(params)  //这里的params是鼠标悬浮的图表节点的数据
+      })
+      
+      //鼠标点击事件
+      this.myChart.on("click",function(params){
+        axios.post('http://127.0.0.1:4523/m2/3164066-0-default/103433132', {
+          name: params.name,
+          ename: params.ename
+        })
+        .then(function (response) {
+          console.log("Mouse Clicked Sccessfully",response.data);
+          bus.emit('province', {province:params , libData:response.data});
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+        //console.log(params)  //这里的params是鼠标点击的图表节点的数据
+      })
+    },
   },
   mounted() {
-    this.initEchart()
+
+    
+    axios.get('http://127.0.0.1:4523/m2/3164066-0-default/103528141')
+    .then((response) => {
+      
+      // console.log("1",this.dataList);
+      // console.log("China Map Info Received Successfully" , response.data);
+      let i = -1;
+      for (let key in response.data) {
+          i++;
+          this.dataList[i] = response.data[key];
+      };
+      // console.log("2",this.dataList);
+      this.initEchart();
+      // console.log("3",this.dataList);
+    });
+
   },
-  
 }
 </script>
 <style scoped>
