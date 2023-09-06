@@ -80,8 +80,9 @@ export default {
       
       for(let key in provinceAndlibData.libData)
       {
-        libraryName.push(provinceAndlibData.libData[key].libraryName);
-        bookAmount.push(provinceAndlibData.libData[key].bookAmount);
+        //有数据代码
+        //libraryName.push(provinceAndlibData.libData[key].libraryName);
+        //bookAmount.push(provinceAndlibData.libData[key].bookAmount);
       }
 
       this.option.xAxis.data = libraryName;

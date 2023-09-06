@@ -1,5 +1,5 @@
 <template>
-    <div id="main">123</div>
+    <div id="main"></div>
 </template>
 <script>
 
@@ -83,7 +83,7 @@ export default {
           top: "bottom",
           text: ["高", "低"], //取值范围的文字
           inRange: {
-            color: ["#e0ffff", "blue"], //取值范围的颜色
+            color: ["#d0e5f2", "#67a3d7"], //取值范围的颜色
           },
           show: true, //图注
         },
@@ -131,7 +131,8 @@ export default {
       
       //鼠标点击事件
       this.myChart.on("click",function(params){
-        axios.post('http://127.0.0.1:4523/m2/3164066-0-default/103433132', {
+        //axios.post('http://127.0.0.1:4523/m2/3164066-0-default/103433132', {
+          axios.post('https://mock.apifox.cn/m1/3175907-0-default/provinceName', {
           name: params.name,
           ename: params.ename
         })
@@ -150,7 +151,8 @@ export default {
   mounted() {
 
     
-    axios.get('http://127.0.0.1:4523/m2/3164066-0-default/103528141')
+    //axios.get('http://127.0.0.1:4523/m2/3164066-0-default/103528141')
+    axios.get('https://mock.apifox.cn/m1/3175907-0-default/')
     .then((response) => {
       
       // console.log("1",this.dataList);
@@ -158,7 +160,8 @@ export default {
       let i = -1;
       for (let key in response.data) {
           i++;
-          this.dataList[i] = response.data[key];
+          //this.dataList[i] = response.data[key];
+          this.dataList[i] = 0;
       };
       // console.log("2",this.dataList);
       this.initEchart();

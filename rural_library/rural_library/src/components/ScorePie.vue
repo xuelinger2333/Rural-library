@@ -124,8 +124,9 @@ export default {
             for (let key in provinceAndlibData.libData) {
                 scoreData[provinceAndlibData.libData[key].score - 1].value++;
             }
-            this.option.series[0].data =scoreData;
-            this.ScorePie.setOption(this.option , true);
+            //有数据
+            //this.option.series[0].data =scoreData;
+            //this.ScorePie.setOption(this.option , true);
         }
     }
 };

@@ -22,6 +22,7 @@
           <AmountRank></AmountRank>
         </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -62,35 +63,50 @@ export default {
 </script>
 
 <style scoped>
+.home {
+  background-color: #edece8;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
 .mapp {
   width: 48vw;
-  height: 69vh;
+  height: 100%;
   z-index: 2;
-  background-color: aquamarine;
+  background-color: #cad5dc;
+  border-radius: 20px;
 }
 
 .head {
   position: relative;
   top: 70px;
+  font-family: "Kyo";
   text-align: center;
 }
 
 .image-layout {
+  margin-left: 20px;
+  margin-right: 20px;
   position: relative;
-  top: 100px;
+  top: 80px;
   display: grid;
   grid-template-columns: 1fr 1fr; /* 左1/2，右1/2 */
-  gap: 10px; /* 图片之间的间距 */
-  height: 70vh;
+  gap: 20px; /* 图片之间的间距 */
+  height: 65vh;
 }
 
 .left-image {
   grid-column: 1; /* 左边图片占据第一列 */
-  grid-row: 1; /* 左边图片跨越两行 */
+  grid-row: 1 / span 2; /* 左边图片跨越两行 */
 }
 
 .right-images {
-  background-color: aqua;
+  background-color: #cad5dc;
+  border-radius: 20px;
   display: grid;
   grid-template-rows: 1fr 1fr; /* 右边图片上下各占一半 */
   grid-row: 1 / span 2; /* 右边图片区域跨越两行 */
@@ -104,14 +120,5 @@ export default {
   grid-row: 2; /* 下边图片占据第二行 */
 }
 
-img {
-  width: 100%;
-  height: auto;
-}
 
-.other
-{
-  position: relative;
-  top: 200px;
-}
 </style>
